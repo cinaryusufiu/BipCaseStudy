@@ -1,0 +1,109 @@
+name: BipCaseStudy
+options:
+  bundleIdPrefix: com.cinaryusuf
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+
+configs:
+  Debug: debug
+  Development: debug
+  Release: release
+
+packages:
+  NetworkKit:
+    path: Packages/NetworkKit
+
+targets:
+  BipCaseStudy:
+    type: application
+    platform: iOS
+    sources:
+      - path: BipCaseStudy
+        excludes:
+          - "**/.DS_Store"
+    dependencies:
+      - package: NetworkKit
+    settings:
+      base:
+        INFOPLIST_FILE: BipCaseStudy/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.cinaryusuf.BipCaseStudy
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_STYLE: Automatic
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
+      configs:
+        Debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+        Development:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEVELOPMENT
+        Release:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: ""
+    preBuildScripts: []
+
+  BipCaseStudyTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: BipCaseStudyTests
+        excludes:
+          - "**/.DS_Store"
+    dependencies:
+      - target: BipCaseStudy
+      - package: NetworkKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cinaryusuf.BipCaseStudyTests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.0"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/BipCaseStudy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BipCaseStudy"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+
+schemes:
+  BipCaseStudy-Debug:
+    build:
+      targets:
+        BipCaseStudy: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - BipCaseStudyTests
+    profile:
+      config: Debug
+    analyze:
+      config: Debug
+
+  BipCaseStudy-Dev:
+    build:
+      targets:
+        BipCaseStudy: all
+    run:
+      config: Development
+    test:
+      config: Development
+      targets:
+        - BipCaseStudyTests
+    profile:
+      config: Development
+    analyze:
+      config: Development
+
+  BipCaseStudy-Release:
+    build:
+      targets:
+        BipCaseStudy: all
+    run:
+      config: Release
+    profile:
+      config: Release
+    analyze:
+      config: Release

@@ -1,0 +1,43 @@
+/*
+  Localizable.strings
+  BipCaseStudy
+
+  Created by Yusuf Cinar on 17.08.2026.
+*/
+
+// MARK: - General
+
+"app_name" = "BipStore";
+"ok" = "OK";
+"cancel" = "Cancel";
+"confirm" = "Confirm";
+"try_again" = "Try Again";
+
+// MARK: - Navigation
+
+"products_title" = "Products";
+"product_detail_title" = "Product Detail";
+
+// MARK: - Empty States
+
+"empty_title" = "No Data";
+"empty_no_content" = "No content available.";
+"empty_no_products" = "No products available.";
+
+// MARK: - Error
+
+"error_title" = "Error";
+"error_oops" = "Oops!";
+
+// MARK: - Alert
+
+"info_title" = "Info";
+"success_title" = "Success";
+
+// MARK: - Product Detail
+
+"description_title" = "Description";
+
+// MARK: - Connectivity
+
+"offline_banner" = "Offline Mode - Showing cached data";

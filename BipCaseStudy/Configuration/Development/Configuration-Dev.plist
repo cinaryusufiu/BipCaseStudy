@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>baseURL</key>
+	<string>https://s3-eu-west-1.amazonaws.com/developer-application-test</string>
+	<key>logLevel</key>
+	<string>info</string>
+	<key>isLoggingEnabled</key>
+	<true/>
+	<key>imageCacheMemoryLimit</key>
+	<integer>52428800</integer>
+	<key>imageCacheItemLimit</key>
+	<integer>50</integer>
+</dict>
+</plist>
